@@ -1,4 +1,4 @@
-const personagensNaruto = [
+export const personagensNaruto = [
   {
     nome: "Naruto",
     sobrenome: "Uzumaki",
@@ -181,11 +181,3 @@ const personagensNaruto = [
   },
 ];
 
-const nomes = personagensNaruto.map(personagem => personagem.nome)
-const menoresidade = personagensNaruto.filter(persogem => persogem.idade < 18)
-const somar = personagensNaruto.filter(p => p.possuiKekkeiGenkai).length;
-const chakra = personagensNaruto.filter(p => p.nivel === "Jonin").map(p =>p.chakra)
-const somachakra = personagensNaruto.map(p => p.chakra).reduce((soma, valorAtual) => soma + valorAtual, 0)
-const media = personagensNaruto.map(somachakra/)
-const Chunin = personagensNaruto.filter(p => p.nivel === "Chunin").map(p => p.chakra/p.idade).reduce((acumulador, valor, _, array) => acumulador + valor / array.length, 0)
-const addrazao = personagensNaruto.map(p => p.chakra/p.idade)
