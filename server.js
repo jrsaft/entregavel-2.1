@@ -9,17 +9,13 @@ const app = express();
 app.use(cors());
 app.use(express.json())
 
-app.get('/', (req, res) => {
-    res.json({hello:"world"});
-});
-
 app.get('/nomes', (req, res) => {
     const nomes = personagensNaruto.map(personagem => personagem.nome);
     res.json(nomes);
 });
 
 app.get('/menores-idade', (req, res) => {
-    const menoresidade = personagensNaruto.filter(persogem => persogem.idade < 18 && p.ehDaFolha);
+    const menoresidade = personagensNaruto.filter(persogem => persogem.idade < 18 && persogem.ehDaFolha);
     res.json(menoresidade);
 });
 
@@ -28,7 +24,7 @@ app.get('/somar-kekkei-genkai', (req, res) => {
     res.json({ total: somar });
 });
 
-app.get('/somar-chakra-jonin', (req, res) => {
+app.get('/chakra-jonin', (req, res) => {
     const chakra = personagensNaruto.filter(p => p.nivel === "Jonin").map(p =>p.chakra);
     res.json(chakra);
 });
@@ -48,8 +44,8 @@ app.get('/media-razao', (req,res) => {
 })
 
 app.get('/maior-menor-razao', (req,res) => {
-    const maiorRazao = apenasChunins.map(p => p.chakra/p.idade).reduce((maior, atual) => atual.razao > maior.razao ? atual : maior);
-    const menorRazao = apenasChunins.map(p => p.chakra/p.idade).reduce((menor, atual) => atual.razao < menor.razao ? atual : menor);
+    const maiorRazao = personagensNaruto.filter(p => p.nivel === "Chunin").map(p => p.chakra/p.idade).reduce((maior, atual) => atual.razao > maior.razao ? atual : maior);
+    const menorRazao = personagensNaruto.filter(p => p.nivel === "Chunin").map(p => p.chakra/p.idade).reduce((menor, atual) => atual.razao < menor.razao ? atual : menor);
     res.json({ "Personagem com maior razão": maiorRazao.nome, "Personagem com menor razão": menorRazao.nome })
 })
 

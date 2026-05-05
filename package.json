@@ -1,0 +1,27 @@
+{
+  "name": "entregavel-2.1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "entregavel.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jrsaft/entregavel-2.1.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/jrsaft/entregavel-2.1/issues"
+  },
+  "homepage": "https://github.com/jrsaft/entregavel-2.1#readme",
+  "dependencies": {
+    "cors": "^2.8.6",
+    "express": "^5.2.1"
+  }
+}
